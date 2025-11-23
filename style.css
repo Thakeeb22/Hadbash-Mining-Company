@@ -318,7 +318,7 @@ main {
   grid-area: projects;
   background-color: var(--light);
   padding: 20px;
-  /* max-width: 100%; */
+  max-width: 100%;
   width: 100%;
   margin: auto;
   padding: 40px 0;
@@ -702,6 +702,7 @@ footer {
   form > input,
   form > textarea {
     width: 80%;
+    font-size: 0.95rem;
   }
   .cont > form {
     width: 100%;
