@@ -8,22 +8,27 @@
 * {
   margin: 0;
   padding: 0;
-  max-width: 100%;
+  box-sizing: border-box;
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ccc;
+  padding-top: 90px;
+}
+/* Add scroll margin to sections for fixed header offset */
+section {
+  scroll-margin-top: 100px;
 }
 .container {
   width: 100%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   grid-template-areas:
-    "header header header header"
-    "main main main main"
-    "footer footer footer footer";
+    "header"
+    "main"
+    "footer";
 }
 /* Header */
 header {
@@ -40,18 +45,19 @@ header {
   max-width: 200px;
 }
 .logo-nav {
-  width: 70%;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   background: var(--primary);
   color: var(--light);
-  width: 100%;
-  padding: 20px;
-  height: 50px;
+  padding: 10px 20px;
+  height: auto;
   position: fixed;
   z-index: 1000;
   top: 0;
+  left: 0;
+  box-sizing: border-box;
 }
 .navbar ul {
   display: flex;
@@ -93,10 +99,35 @@ header {
   color: white;
   height: 50px;
 }
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
 /* hero */
 .hero {
   width: 100%;
-  height: 300px;
   background: url("./img/hero.jpg") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -111,7 +142,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--light);
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
   padding: 30px;
@@ -169,7 +200,7 @@ main {
 /* about-us */
 .about-us {
   grid-area: about-us;
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,7 +248,7 @@ main {
   background-color: var(--light);
   color: var(--gray);
   padding: 20px;
-  box-shadow: 0px 0px 10px 0px#555;
+  box-shadow: 0px 0px 10px 0px #555;
 }
 .our-mission > i,
 .our-vision > i,
@@ -268,7 +299,7 @@ main {
   background-color: var(--light);
   color: var(--gray);
   padding: 20px;
-  box-shadow: 0px 0px 10px 0px#555;
+  box-shadow: 0px 0px 10px 0px #555;
   width: 100%;
   height: 100%;
   display: flex;
@@ -318,6 +349,12 @@ main {
   flex-direction: column;
   gap: 20px;
 }
+.photo {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+}
 .photo img {
   width: 100%;
   height: 100%;
@@ -360,12 +397,12 @@ main {
   flex-direction: column;
   align-items: center;
   flex: 1 1 0;
-  max-width: 20%;
+  width: 20%;
   background: var(--light);
   border-radius: 20px;
   padding: 20px;
   height: 400px;
-  box-shadow: 0px 0px 10px 0px#555;
+  box-shadow: 0px 0px 10px 0px #555;
 }
 .card-item .team-image {
   width: 150px;
@@ -388,6 +425,16 @@ main {
   margin: auto;
   flex: 1 1 0;
 }
+.cont {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--light);
+  padding: 20px;
+  margin: auto;
+  flex: 1 1 0;
+}
 .contact > h2 {
   color: var(--primary);
   margin: 10px 0;
@@ -396,28 +443,38 @@ main {
   border-bottom: 4px solid var(--accent);
   padding: 20px;
 }
-.contact > form {
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 20px 0 0;
+  gap: 15px;
+  font-size: 1.2rem;
+  color: var(--gray);
+  width: 40%;
+  margin-top: 20px;
+}
+.contact-links > span > i {
+  color: var(--accent);
+  margin-right: 10px;
+}
+.cont > form {
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  width: 40%;
+  padding: 20px;
+  width: 80%;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px 0px#555;
+  box-shadow: 0px 0px 10px 0px #555;
   margin-top: 20px;
   margin-bottom: 40px;
   gap: 10px;
 }
-form > h3 {
-  color: var(--primary);
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
 form > input,
-textarea {
+form > textarea {
   padding: 20px 30px;
   width: 90%;
   border-radius: 10px;
@@ -429,15 +486,19 @@ textarea {
 }
 form > input[type="submit"] {
   font-weight: 600;
-  color: var(--primary);
-  background: transparent;
+  color: white;
+  background: var(--primary);
   width: 40%;
   cursor: pointer;
   transition: all 0.5s ease;
+  align-self: center;
+  border: 2px solid var(--primary);
+  padding: 12px;
 }
 form > input[type="submit"]:hover {
-  background: var(--primary);
-  color: var(--accent);
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
 }
 /* Footer */
 footer {
@@ -463,6 +524,13 @@ footer {
 .footer-logo {
   max-width: 200px;
   min-width: 100px;
+}
+.footer-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .quick-links {
   display: flex;
@@ -516,8 +584,158 @@ footer {
 .follow > h3 {
   color: var(--accent);
 }
-.foot > .copy {
-  align-items: flex-end;
+.follow ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  flex: 1 1 0;
+  gap: 10px;
+}
+.follow > ul > li {
+  /* height: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0;
+}
+.follow > ul > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  font-size: 1.5rem;
+  color: var(--light);
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.follow > ul > li > a:hover {
+  color: var(--accent);
 }
 @media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+  .hero-det {
+    width: 90%;
+  }
+  .hero-det> h1 {
+    font-size: 2.5rem;
+  } 
+  .hero-det > p {
+    font-size: 1.5rem;
+  }
+  .hero-det > span > button{
+    margin: 10px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .logo-nav {
+    justify-content: space-between;
+  }
+  .navbar {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .navbar.active {
+    max-height: 400px;
+  }
+  .navbar ul {
+    flex-direction: column;
+    padding: 0;
+    height: auto;
+  }
+  .navbar > ul > li {
+    height: auto;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .navbar > ul > li > a {
+    height: auto;
+    padding: 0 20px;
+  }
+  .navbar li {
+    margin: 0;
+  }
+  .mvc {
+    flex-direction: column;
+  }
+  .sct {
+    flex-direction: column;
+  }
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .teams-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .card-item {
+    width: 100%;
+  }
+  .cont {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .contact-links {
+    width: 80%;
+    margin-bottom: 20px;
+    align-items: center;
+    margin: 0;
+    font-size: 1rem;
+  }
+  form > input,
+  form > textarea {
+    width: 80%;
+  }
+  .cont > form {
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+  form > input[type="submit"] {
+    width: 60%;
+  }
+  main {
+    grid-template-areas:
+      "about-us"
+      "sectors"
+      "projects"
+      "teams"
+      "contact";
+  }
+  #about-details {
+    width: 90%;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .foot {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .footer-logo {
+    margin: auto;
+  }
 }

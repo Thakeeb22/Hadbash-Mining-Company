@@ -33,7 +33,7 @@
               class="logo"
           /></a>
           <!-- Navigation -->
-          <nav class="navbar">
+          <nav class="navbar" id="navbar">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="#about-us">About</a></li>
@@ -43,6 +43,12 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
+          <!-- Hamburger Menu -->
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
         <!-- Hero Section -->
         <div class="hero">
@@ -262,8 +268,14 @@
         <!-- Contact -->
         <section class="contact" id="contact">
           <h2>Contact Us</h2>
+          <div class="cont">
+          <div class="contact-links">
+            <span class="location"><i class="fa-solid fa-location-dot"></i> Kaduna, Nigeria</span>
+            <span class="phone"><i class="fa-solid fa-phone"></i> +234 803 1234 567</span>
+            <span class="email"><i class="fa-solid fa-envelope"></i> info@hadbashmining.com</span>
+            <span class="whatsapp"><i class="fa-brands fa-whatsapp"></i> +234 803 1234 567</span>
+          </div>
           <form>
-            <h3>Message Us Now</h3>
             <input
               type="text"
               id="name"
@@ -290,12 +302,13 @@
 
             <input type="submit" value="Submit" />
           </form>
+          </div>
         </section>
       </main>
       <!-- Footer -->
       <footer>
         <div class="foot">
-          <div class="logo">
+          <div class="footer-logo-section">
             <img src="./img/hadbash logo.svg" alt="logo" class="footer-logo" />
             <p>From Dirt We Extract Precious Minerals</p>
           </div>
@@ -313,10 +326,10 @@
           <div class="follow">
             <h3>Follow Us</h3>
             <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">LinkedIn</a></li>
-              <li><a href="#">Instagram</a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
           </div>
           <p class="copy">
@@ -325,7 +338,6 @@
         </div>
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script></script>
+    <script src="./script.js"></script>
   </body>
 </html>

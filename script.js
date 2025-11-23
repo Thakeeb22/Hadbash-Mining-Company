@@ -1,6 +1,23 @@
 // Simple UI scripts: nav toggle, smooth scroll, gallery lightbox, contact form demo
 
 document.addEventListener('DOMContentLoaded', () => {
+  // HAMBURGER MENU TOGGLE
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+  
+  hamburger?.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+
+  // Close menu when clicking on a nav link
+  document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  });
+
   // NAV TOGGLE
   const navToggle = document.querySelector('.nav-toggle');
   const siteNav = document.getElementById('site-nav');
