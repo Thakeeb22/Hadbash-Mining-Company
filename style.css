@@ -427,7 +427,7 @@ main {
   background: var(--light);
   border-radius: 20px;
   padding: 20px;
-  height: 400px;
+  height: 500px;
   box-shadow: 0px 0px 10px 0px #555;
 }
 .card-item .team-image {
@@ -440,6 +440,9 @@ main {
 }
 .yunus > p {
   text-align: left;
+}
+.low{
+  margin-top: 10px;
 }
 /* contact */
 .contact {
@@ -729,6 +732,7 @@ footer {
   }
   .card-item {
     width: 100%;
+    height: auto;
   }
   .yunus{
     height: auto;
