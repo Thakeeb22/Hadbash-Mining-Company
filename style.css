@@ -242,27 +242,31 @@ main {
   margin: 50px 0;
 }
 .our-mission,
-.our-vision,
-.core-values {
+.our-vision {
   border-radius: 20px;
   background-color: var(--light);
   color: var(--gray);
   padding: 20px;
   box-shadow: 0px 0px 10px 0px #555;
+  width: 50%;
 }
 .our-mission > i,
-.our-vision > i,
-.core-values > i {
+.our-vision > i {
   font-size: 3rem;
   color: var(--accent);
   margin: 10px 0;
 }
 .our-mission > h3,
-.our-vision > h3,
-.core-values > h3 {
+.our-vision > h3 {
   color: var(--primary);
   margin: 10px 0;
   font-size: 1.5rem;
+}
+.mis {
+  margin: 20px;
+}
+.mis > li {
+  text-align: left;
 }
 /* sectors */
 .sectors {
@@ -285,16 +289,25 @@ main {
   padding: 20px;
 }
 .sct {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex: 1 1 0;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.serve {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  margin: 50px 0;
+  /* margin: 50px 0; */
   gap: 20px;
 }
-.sct > div {
+.serve > .sector {
   border-radius: 20px;
   background-color: var(--light);
   color: var(--gray);
@@ -308,10 +321,23 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.sct > div > i {
+.focus > .sector{
+  background-color: #555;
+  color: var(--light);
+}
+.strengths > .sector{
+  background: var(--light);
+  color: var(--dark);
+}
+.serve > div > i {
   font-size: 3rem;
   color: var(--accent);
   margin: 10px 0;
+}
+.sct > .Services {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-top: 50px;
 }
 /* projects */
 .projects {
@@ -454,6 +480,7 @@ main {
   color: var(--gray);
   width: 40%;
   margin-top: 20px;
+  text-align: left;
 }
 .contact-links > span > i {
   color: var(--accent);
@@ -623,13 +650,13 @@ footer {
   .hero-det {
     width: 90%;
   }
-  .hero-det> h1 {
+  .hero-det > h1 {
     font-size: 2.5rem;
-  } 
+  }
   .hero-det > p {
     font-size: 1.5rem;
   }
-  .hero-det > span > button{
+  .hero-det > span > button {
     margin: 10px;
   }
   .hamburger {
@@ -671,11 +698,25 @@ footer {
   .navbar li {
     margin: 0;
   }
+  .abt{
+    width: 100%;
+  }
+  #about-details{
+    width: 100%;
+  }
   .mvc {
     flex-direction: column;
   }
+  .our-mission,
+.our-vision{
+  width: 100%;
+}
   .sct {
     flex-direction: column;
+  }
+  .serve {
+    grid-template-columns: repeat(1,1fr);
+    width: 100%;
   }
   .photo-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -685,7 +726,7 @@ footer {
     width: 100%;
   }
   .card-item {
-    width: 100%;
+    width: 100%; 
   }
   .cont {
     flex-direction: column;
