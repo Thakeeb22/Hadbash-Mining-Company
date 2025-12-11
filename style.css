@@ -441,7 +441,7 @@ main {
 .yunus > p {
   text-align: left;
 }
-.low{
+.low {
   margin-top: 10px;
 }
 /* contact */
@@ -455,6 +455,10 @@ main {
   padding: 20px;
   margin: auto;
   flex: 1 1 0;
+}
+.contanct {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .cont {
   width: 100%;
@@ -486,9 +490,17 @@ main {
   margin-top: 20px;
   text-align: left;
 }
+.contact-links > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .contact-links > span > i {
   color: var(--accent);
-  margin-right: 10px;
+  flex: 0 0 auto;
+}
+.contact-links > span > p {
+  margin: 0;
 }
 .cont > form {
   display: flex;
@@ -734,7 +746,7 @@ footer {
     width: 100%;
     height: auto;
   }
-  .yunus{
+  .yunus {
     height: auto;
   }
   .cont {
@@ -745,9 +757,12 @@ footer {
   .contact-links {
     width: 80%;
     margin-bottom: 20px;
-    align-items: center;
+    align-items: flex-start;
     margin: 0;
     font-size: 1rem;
+  }
+  .contact-links > span > p {
+    display: inline;
   }
   form > input,
   form > textarea {
